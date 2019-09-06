@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   // what do we want.
-
-  // an input field that enables a user to enter their location
+  // an input field that enables a user to enter their location ✅
   // save location on enter to locations collection
   // Get list of pins based on uquery.
 
@@ -47,6 +46,9 @@ export class HomeComponent implements OnInit {
 
   onChange(address) {
     console.log(address);
+    this.locationName = address.formatted_address;
+    this.lat = address.geometry.location.lat();
+    this.lng = address.geometry.location.lng();
   }
 
   search() {
